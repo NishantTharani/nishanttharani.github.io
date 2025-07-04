@@ -6,6 +6,14 @@
 /* use a selector-based strategy for dark mode */
 @variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
+/* Inter variable, weight 100–900 */
+@font-face {
+	font-family: 'InterVariable';
+	src: url('/fonts/InterVariable.ttf') format('truetype');
+	font-weight: 100 900;
+	font-display: swap;
+}
+
 /* you could refactor below to use light-dark(), depending on your target audience */
 @theme {
 	--color-global-bg: oklch(98.48% 0 0);
@@ -14,6 +22,7 @@
 	--color-accent: oklch(55.27% 0.195 19.06);
 	--color-accent-2: oklch(18.15% 0 0);
 	--color-quote: oklch(55.27% 0.195 19.06);
+	--color-inline-code-bg: oklch(0 0 0 / 0.05);
 }
 
 @layer base {
@@ -21,6 +30,8 @@
 		color-scheme: light dark;
 		accent-color: var(--color-accent);
 		scrollbar-gutter: stable;
+
+		--font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
 		&[data-theme="light"] {
 			color-scheme: light;

@@ -1,9 +1,14 @@
 import type { Config } from "tailwindcss";
+import defaultTheme from 'tailwindcss/defaultTheme';
 
 export default {
 	plugins: [require("@tailwindcss/typography")],
 	theme: {
 		extend: {
+			fontFamily: {
+				sans: ['InterVariable', ...defaultTheme.fontFamily.sans],
+				mono: [ ...defaultTheme.fontFamily.mono], // keep this
+			},
 			typography: () => ({
 				DEFAULT: {
 					css: {
@@ -20,8 +25,11 @@ export default {
 							borderLeftWidth: "0",
 						},
 						code: {
-							border: "1px dotted #666",
-							borderRadius: "2px",
+							// border: "1px dotted #666",
+							// borderRadius: "2px",
+							background: "var(--color-inline-code-bg)",
+							fontWeight: "500",
+							fontFamily: "var(--font-mono)",
 						},
 						kbd: {
 							"&:where([data-theme='dark'], [data-theme='dark'] *)": {
