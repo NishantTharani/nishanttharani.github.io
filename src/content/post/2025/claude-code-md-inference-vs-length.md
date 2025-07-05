@@ -1,5 +1,5 @@
 ---
-title: "CLAUDE.md design: more context use vs additional inference"
+title: "CLAUDE.md: one big file vs linking to project docs"
 description: "The additional inference step wins"
 publishDate: "04 Jul 2025"
 tags: ["claude-code", "ai-coding", "tech"]
